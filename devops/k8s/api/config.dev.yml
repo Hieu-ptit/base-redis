@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fair-api
+data:
+  LOG_LEVEL: DEBUG
+  FAIR_CORE_URL: http://fair-core/fair-core/v1
+  TAVERN_API_URL: http://tavern-api/tavern-api/v1

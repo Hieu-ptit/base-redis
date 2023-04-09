@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fair-core
+data:
+  SERVICE_NAME: fair-core
+  NAME_SPACE: wm-dev
+  LOG_LEVEL: DEBUG
+  DB_HOST: drapiadb.cluster-cql1rashcqjj.ap-southeast-1.rds.amazonaws.com
+  DB_PORT: "51032"
+  DB_NAME: fairdb
+  DB_USER: drapia
+  KAFKA_SERVERS: 159.223.81.203:9093
+  PRICE_NOTIFY_TOPIC: dev.fair.exchange-price
+  ITEM_NOTIFY_TOPIC: dev.wofmgame.item
+  TXN_NOTIFY_TOPIC: dev.warehouse.transaction
+  TXN_SYNC_TOPIC: dev.fair.transaction
+  CONTRACT_NOTIFY_TOPIC: dev.fair.contract
+  REWARD_NOTIFY_TOPIC: dev.fair.reward
+  ITEM_NOTIFY_GROUP: fair-group
+  TXN_NOTIFY_GROUP: fair-group
+  TOKEN_SWAP_API_URL: https://bsc.api.0x.org/swap/v1
+  GAME_API_URL: http://34.87.117.98:1442
+  WAREHOUSE_API_URL: http://warehouse-core/warehouse-core/v1
+  TAVERN_API_URL: http://tavern-core/tavern-core/v1
+  SUPPORTED_PAYMENT_TOKEN: |
+    {WOFM: "0x548639e883be267c966966dc311f77a17a04bd76", BUSD: "0x548639e883be267c966966dc311f77a17a04bd76", USDT: "0x548639e883be267c966966dc311f77a17a04bd76"}
+  EXCHANGE_PRICE_TOKENS: |
+    {WOFM: "0x918f2fe1b50ecaeaeb95482669881ed42a978083"}
+  TXN_DURATION_SECONDS: "90"
+  DEFAULT_VOUCHER_DURATION_SECONDS: "86400"
+  DEFAULT_MAX_DISCOUNTS: |
+    {BUSD: "99000000000000000000", USDT: "99000000000000000000"}
+  FIXED_DISCOUNT_BDEF_ID: "1"
+  UNBOX_TIMEOUT_SECONDS: "120"
+  DEFAULT_REWARD_TOKEN_SYMBOL: BUSD
+  DEFAULT_REWARD_TOKEN_ADDRESS: 0x548639e883be267c966966dc311f77a17a04bd76
+  GAME_SERVER_CACHE_TTL: "900"
+  ACCOUNT_CACHE_TTL: "900"
+  HEROES_NAME_CACHE_TTL: "900"
+  SWAGGER_ENABLED: 'false'
